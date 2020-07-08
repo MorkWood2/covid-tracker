@@ -8,7 +8,15 @@ import { fetchUSData } from './api';
 class App extends React.Component {
   state = {
     usData: {},
+    // hidden: true,
   };
+
+  // handleClick = () => {
+  //   console.log('clicked')
+  //   this.setState({
+  //     hidden : !hidden
+  //   })
+  // }
 
   async componentDidMount() {
     const fetchedUSData = await fetchUSData();
