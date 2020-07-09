@@ -29,13 +29,18 @@ const UsaDisplay = ({ data, dailyData }) => {
 
   return (
     <div>
-      <h1 className='heading'>USA</h1>
+      <h1 className='heading'>
+        USA{' '}
+        <span role='img' aria-label='american flag'>
+          🇺🇸
+        </span>
+      </h1>
       <div className='content-container'>
-        <h2>Today</h2>
+        <h1 className='box-title'>Today</h1>
         <h6>{currentDate()}</h6>
         <div className='box-container'>
           <div className='box'>
-            <h4>CONFIRMED CASES</h4>
+            <h5>CONFIRMED CASES</h5>
             <CountUp
               start={0}
               end={todayCases}
@@ -45,7 +50,7 @@ const UsaDisplay = ({ data, dailyData }) => {
             />
           </div>
           <div className='box'>
-            <h4>DEATHS</h4>
+            <h5>DEATHS</h5>
 
             <CountUp
               start={0}
@@ -56,23 +61,30 @@ const UsaDisplay = ({ data, dailyData }) => {
             />
           </div>
         </div>
+        <p className='note'>
+          {' '}
+          <i>
+            * Note : 0 value might indicate no reports yet from the Department
+            of Health within this day
+          </i>
+        </p>
       </div>
       <div className='content-container'>
-        <h2>All Time</h2>
+        <h1 className='box-title'>All Time</h1>
         <div className='box-container'>
           <div className='box'>
-            <h4>TESTS CONDUCTED</h4>
+            <h5>TESTS CONDUCTED</h5>
             <CountUp
               start={0}
               end={tests}
-              duration={1.2}
+              duration={1.9}
               separator=','
               className='counter blue'
             />
           </div>
 
           <div className='box'>
-            <h4>CONFIRMED CASES</h4>
+            <h5>CONFIRMED CASES</h5>
 
             <CountUp
               start={0}
@@ -84,7 +96,7 @@ const UsaDisplay = ({ data, dailyData }) => {
           </div>
 
           <div className='box'>
-            <h4>ACTIVE CASES</h4>
+            <h5>ACTIVE CASES</h5>
             <CountUp
               start={0}
               end={active}
@@ -94,7 +106,7 @@ const UsaDisplay = ({ data, dailyData }) => {
             />
           </div>
           <div className='box'>
-            <h4>DEATHS</h4>
+            <h5>DEATHS</h5>
 
             <CountUp
               start={0}
@@ -105,7 +117,7 @@ const UsaDisplay = ({ data, dailyData }) => {
             />
           </div>
           <div className='box'>
-            <h4>RECOVERED</h4>
+            <h5>RECOVERED</h5>
             <CountUp
               start={0}
               end={recovered}

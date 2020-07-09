@@ -5,11 +5,22 @@
   font-weight: 300;
   font-size: 50px;
 }
+
 .content-container {
-  padding: 0 16%;
+  padding: 0 10%;
   color: #4b5769;
   font-family: 'Lato', sans-serif;
   font-weight: 300;
+
+  .box-title {
+    font-weight: 300;
+  }
+
+  .note {
+    color: #a6a6a6;
+    font-size: 13px;
+  }
+
   .button-wrapper {
     display: flex;
     justify-content: center;
@@ -17,7 +28,7 @@
     padding: 50px 0;
 
     button {
-      width: 10%;
+      width: 130px;
       background-color: #4481bb;
       color: whitesmoke;
       border-radius: 8px;
@@ -43,7 +54,7 @@
     .box {
       letter-spacing: 2px;
       padding: 10px 0 30px 0;
-      width: 350px;
+      width: 30%;
       flex-basis: auto;
       margin: 10px 10px 10px 0;
       border-radius: 10px;
@@ -54,6 +65,7 @@
 
       .counter {
         font-size: 30px;
+        font-weight: 400;
       }
       .red {
         color: #e64647;
@@ -63,6 +75,17 @@
       }
       .yellow {
         color: #f7bc4e;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .content-container {
+    .box-container {
+      justify-content: center;
+      .box {
+        width: 300px;
       }
     }
   }
