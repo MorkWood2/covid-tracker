@@ -13,7 +13,7 @@ const UsaDisplay = ({ data, dailyData }) => {
     todayDeaths,
     cases,
   } = data;
-  const [isToggled, setToggled] = useState(true);
+  const [isToggled, setToggled] = useState(false);
 
   const toggleTrueFalse = () => setToggled(!isToggled);
 
@@ -115,7 +115,13 @@ const UsaDisplay = ({ data, dailyData }) => {
             />
           </div>
         </div>
-        <button onClick={toggleTrueFalse}> Toggle</button>
+        <div className='button-wrapper'>
+          <button onClick={toggleTrueFalse}>
+            {' '}
+            {isToggled ? 'Hide Chart' : 'Show Chart'}
+          </button>
+        </div>
+
         {isToggled ? <UsaGraphs data={data} dailyData={dailyData} /> : null}
       </div>
     </div>

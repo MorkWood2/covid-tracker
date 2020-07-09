@@ -6,22 +6,37 @@
   font-size: 50px;
 }
 .content-container {
-  // width: 90%;
-  // margin: 0 auto;
   padding: 0 16%;
   color: #4b5769;
   font-family: 'Lato', sans-serif;
   font-weight: 300;
-  // display: flex;
-  // flex-direction: column;
-  // align-items: center;
+  .button-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 0;
 
-  button {
-    width: 20%;
+    button {
+      width: 10%;
+      background-color: #4481bb;
+      color: whitesmoke;
+      border-radius: 8px;
+      border: none;
+      padding: 10px;
+      text-decoration: none;
+    }
+    button:hover {
+      background-color: #598ebe;
+      color: white;
+      transition: 0.2s;
+    }
+    button:focus {
+      outline: 0;
+    }
   }
 
   .box-container {
-    border: 1px solid pink;
+    // border: 1px solid pink;
     display: flex;
     flex-wrap: wrap;
 

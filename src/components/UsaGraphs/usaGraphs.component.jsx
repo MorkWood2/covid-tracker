@@ -29,7 +29,13 @@ const UsaGraphs = ({
         label: 'All Time (US)',
         fill: false,
         lineTension: 0.1,
-        backgroundColor: 'rgba(75,192,192,0.4)',
+        backgroundColor: [
+          'rgba(75,192,192,.4)',
+          'rgba(75, 87, 105, 0.4)',
+          'rgba(68, 129, 187, .4)',
+          'rgba(0,0,0,0.4)',
+          'rgb(247, 188, 78, 0.4)',
+        ],
         borderColor: 'rgba(75,192,192,1)',
         borderCapStyle: 'butt',
         borderDash: [],
@@ -53,11 +59,11 @@ const UsaGraphs = ({
     labels: Object.keys(dailyCases),
     datasets: [
       {
-        label: 'Confirmed Cases',
+        label: 'Confirmed Cases (US)',
         fill: true,
         lineTension: 0.1,
-        backgroundColor: 'rgba(75,192,192,0.4)',
-        borderColor: 'rgba(75,192,192,1)',
+        backgroundColor: 'rgba(247, 188, 78, .4)',
+        borderColor: 'rgba(247, 188, 78, 1)',
         borderCapStyle: 'butt',
         borderDash: [],
         borderDashOffset: 0.0,
@@ -79,11 +85,11 @@ const UsaGraphs = ({
     labels: Object.keys(dailyDeaths),
     datasets: [
       {
-        label: 'Death Cases',
+        label: 'Death Cases (US)',
         fill: true,
         lineTension: 0.1,
-        backgroundColor: 'rgba(75,192,192,0.4)',
-        borderColor: 'rgba(75,192,192,1)',
+        backgroundColor: 'rgba(0,0,0,0.4)',
+        borderColor: 'rgba(0,0,0,1)',
         borderCapStyle: 'butt',
         borderDash: [],
         borderDashOffset: 0.0,
@@ -106,11 +112,11 @@ const UsaGraphs = ({
     labels: Object.keys(dailyRecovered),
     datasets: [
       {
-        label: 'Recoved Cases',
+        label: 'Recoved Cases (US)',
         fill: true,
         lineTension: 0.1,
-        backgroundColor: 'rgba(75,192,192,0.4)',
-        borderColor: 'rgba(75,192,192,1)',
+        backgroundColor: 'rgba(68, 129, 187, .4)',
+        borderColor: 'rgba(68, 129, 187, 1)',
         borderCapStyle: 'butt',
         borderDash: [],
         borderDashOffset: 0.0,
@@ -132,10 +138,18 @@ const UsaGraphs = ({
   return (
     <div>
       <div className='graph-container'>
-        <HorizontalBar data={barChart} />
-        <Line data={lineChart1} />
-        <Line data={lineChart2} />
-        <Line data={lineChart3} />
+        <div className='graph-element'>
+          <HorizontalBar data={barChart} />
+        </div>
+        <div className='graph-element'>
+          <Line data={lineChart1} />
+        </div>
+        <div className='graph-element'>
+          <Line data={lineChart2} />
+        </div>
+        <div className='graph-element'>
+          <Line data={lineChart3} />
+        </div>
       </div>
     </div>
   );
