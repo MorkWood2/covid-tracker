@@ -3,9 +3,16 @@ import './usaDisplay.styles.scss';
 import CountUp from 'react-countup';
 import UsaGraphs from '../UsaGraphs/usaGraphs.component';
 
-const UsaDisplay = ({
-  data: { active, deaths, recovered, tests, todayCases, todayDeaths, cases },
-}) => {
+const UsaDisplay = ({ data, dailyData }) => {
+  const {
+    active,
+    deaths,
+    recovered,
+    tests,
+    todayCases,
+    todayDeaths,
+    cases,
+  } = data;
   const [isToggled, setToggled] = useState(true);
 
   const toggleTrueFalse = () => setToggled(!isToggled);
@@ -109,7 +116,7 @@ const UsaDisplay = ({
           </div>
         </div>
         <button onClick={toggleTrueFalse}> Toggle</button>
-        {isToggled ? <UsaGraphs /> : null}
+        {isToggled ? <UsaGraphs data={data} dailyData={dailyData} /> : null}
       </div>
     </div>
   );

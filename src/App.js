@@ -3,12 +3,12 @@ import './App.css';
 
 import { UsaDisplay } from './components';
 
-import { fetchUSData } from './api';
+import { fetchUSData, fetchUSDataDaily } from './api';
 
 class App extends React.Component {
   state = {
     usData: {},
-    // hidden: true,
+    usDailyData: {},
   };
 
   // handleClick = () => {
@@ -21,15 +21,17 @@ class App extends React.Component {
   async componentDidMount() {
     const fetchedUSData = await fetchUSData();
 
-    this.setState({ usData: fetchedUSData });
+    const fetchedUSDataDaily = await fetchUSDataDaily();
+
+    this.setState({ usData: fetchedUSData, usDailyData: fetchedUSDataDaily });
   }
 
   render() {
-    const { usData } = this.state;
+    const { usData, usDailyData } = this.state;
 
     return (
       <div>
-        <UsaDisplay data={usData} />
+        <UsaDisplay data={usData} dailyData={usDailyData} />
       </div>
     );
   }
