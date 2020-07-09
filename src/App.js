@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 
-import { UsaDisplay, Header } from './components';
+import { UsaDisplay, Header, InfoBox } from './components';
 
 import { fetchUSData, fetchUSDataDaily } from './api';
 
@@ -33,6 +33,7 @@ class App extends React.Component {
       <div>
         <Header />
         <UsaDisplay data={usData} dailyData={usDailyData} />
+        <InfoBox />
       </div>
     );
   }
