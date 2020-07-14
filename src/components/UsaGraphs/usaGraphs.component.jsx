@@ -16,7 +16,7 @@ const UsaGraphs = ({
       },
     },
   } = dailyData;
-  console.log(dailyCases);
+  // console.log(dailyData);
 
   //   console.log(dailyCases, dailyDeaths, dailyRecovered);
 

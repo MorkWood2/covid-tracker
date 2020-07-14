@@ -2,7 +2,7 @@ import React from 'react';
 import './infoBox.styles.scss';
 import Icon1 from '../../assets/021-washing hands.png';
 import Icon2 from '../../assets/026-no group.png';
-import Icon3 from '../../assets/020-mask.png';
+import Icon3 from '../../assets/011-No touch.png';
 import Icon4 from '../../assets/001-protection.png';
 import Icon5 from '../../assets/012-calendar.png';
 import Icon6 from '../../assets/041-news.png';
@@ -27,8 +27,8 @@ const InfoBox = () => {
           <div className='text-container'>
             <h3>Maintain social distancing</h3>
             <p>
-              Maintain at least 1 metre (3 feet) distance between yourself and
-              anyone who is coughing or sneezing.
+              Maintain at least 3 feet distance between yourself and anyone to
+              ensure you don't spread the virus.
             </p>
           </div>
         </div>
@@ -47,12 +47,11 @@ const InfoBox = () => {
         <div className='info-element'>
           <img src={Icon4} alt='icon' className='icon' />
           <div className='text-container'>
-            <h3>Practice respiratory hygiene</h3>
+            <h3>Wear a mask</h3>
             <p>
-              Make sure you, and the people around you, follow good respiratory
-              hygiene. This means covering your mouth and nose with your bent
-              elbow or tissue when you cough or sneeze. Then dispose of the used
-              tissue immediately.
+              The greatest benefit of masking the masses comes not from
+              shielding the mouths of the healthy but from covering the mouths
+              of people already infected.
             </p>
           </div>
         </div>
@@ -61,7 +60,7 @@ const InfoBox = () => {
           <div className='text-container'>
             <h3>
               If you have fever, cough and difficulty breathing, seek medical
-              care early
+              care early or quarentine for 14 days.
             </h3>
             <p>
               Stay home if you feel unwell. If you have a fever, cough and
@@ -84,7 +83,14 @@ const InfoBox = () => {
             </p>
           </div>
         </div>
+        <a
+          className='source'
+          href='https://www.who.int/emergencies/diseases/novel-coronavirus-2019/advice-for-public'
+        >
+          <i>Source WHO website</i>
+        </a>
       </div>
+      <div height={'300px'}>fdaf</div>
     </div>
   );
 };
