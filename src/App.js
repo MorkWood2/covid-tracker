@@ -9,7 +9,7 @@ class App extends React.Component {
   state = {
     usData: {},
     usDailyData: {},
-    worldData: {},
+    worldData: null,
   };
 
   async componentDidMount() {
@@ -28,10 +28,10 @@ class App extends React.Component {
         worldData: fetchedWorldData,
       }
       // () => {
-      //   //active, deaths...
-      //   // console.log(fetchedUSData);
+      //   console.log(fetchedWorldData);
       // }
     );
+    // console.log(fetchedWorldData);
   }
 
   render() {
@@ -41,7 +41,8 @@ class App extends React.Component {
       <div>
         <Header />
         <UsaDisplay data={usData} dailyData={usDailyData} />
-        <WorldDisplay data={worldData} />
+        {worldData ? <WorldDisplay data={worldData} /> : <div></div>}
+
         <InfoBox />
       </div>
     );

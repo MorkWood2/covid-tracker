@@ -30,10 +30,10 @@ const UsaDisplay = ({ data, dailyData }) => {
   return (
     <div>
       <h1 className='heading'>
-        USA{' '}
         <span role='img' aria-label='american flag'>
           🇺🇸
-        </span>
+        </span>{' '}
+        USA
       </h1>
       <div className='content-container'>
         <h1 className='box-title'>Today</h1>

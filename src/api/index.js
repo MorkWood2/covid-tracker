@@ -51,7 +51,6 @@ export const fetchUSDataDaily = async () => {
 export const fetchWorldData = async () => {
   try {
     const response = await axios.get(worldData);
-    // const data = response.data;
     return response;
   } catch (error) {
     console.log(error);
