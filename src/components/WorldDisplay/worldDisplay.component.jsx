@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import WorldGraph from '../WorldGraph/worldGraph.component';
+import CountryPicker from '../CountryPicker/countryPicker.component';
 import CountUp from 'react-countup';
 import './worldDisplay.styles.scss';
 
-const WorldDisplay = ({ data: { data } }) => {
-  // console.log(data);
+const WorldDisplay = ({ data: { data }, dailyWorldData }) => {
+  // console.log(dailyWorldData);
   const {
     todayCases,
     todayDeaths,
@@ -19,7 +20,7 @@ const WorldDisplay = ({ data: { data } }) => {
 
   const toggleTrueFalse = () => setToggled(!isToggled);
 
-  if (!active) {
+  if (!active && !dailyWorldData) {
     return 'loading';
   }
 
@@ -136,7 +137,18 @@ const WorldDisplay = ({ data: { data } }) => {
           </button>
         </div>
 
-        {isToggled ? <WorldGraph data={data} /> : null}
+        {isToggled ? (
+          <div>
+            {dailyWorldData ? (
+              <div>
+                <CountryPicker />
+                <WorldGraph data={data} dailyWorldData={dailyWorldData} />
+              </div>
+            ) : (
+              <div></div>
+            )}
+          </div>
+        ) : null}
       </div>
     </div>
   );

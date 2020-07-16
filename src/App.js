@@ -3,13 +3,19 @@ import './App.css';
 
 import { UsaDisplay, Header, InfoBox, WorldDisplay } from './components';
 
-import { fetchUSData, fetchUSDataDaily, fetchWorldData } from './api';
+import {
+  fetchUSData,
+  fetchUSDataDaily,
+  fetchWorldData,
+  fetchDailyWorldData,
+} from './api';
 
 class App extends React.Component {
   state = {
     usData: {},
     usDailyData: {},
     worldData: null,
+    dailyWorldData: null,
   };
 
   async componentDidMount() {
@@ -18,30 +24,35 @@ class App extends React.Component {
     const fetchedUSDataDaily = await fetchUSDataDaily();
 
     const fetchedWorldData = await fetchWorldData();
-    //dat
-    // console.log(fetchedWorldData);
+
+    const fetchedDailyWorldData = await fetchDailyWorldData();
 
     this.setState(
       {
         usData: fetchedUSData,
         usDailyData: fetchedUSDataDaily,
         worldData: fetchedWorldData,
+        dailyWorldData: fetchedDailyWorldData,
       }
       // () => {
       //   console.log(fetchedWorldData);
       // }
     );
-    // console.log(fetchedWorldData);
+    // console.log(fetchedDailyWorldData);
   }
 
   render() {
-    const { usData, usDailyData, worldData } = this.state;
-
+    const { usData, usDailyData, worldData, dailyWorldData } = this.state;
+    // console.log(dailyWorldData);
     return (
       <div>
         <Header />
         <UsaDisplay data={usData} dailyData={usDailyData} />
-        {worldData ? <WorldDisplay data={worldData} /> : <div></div>}
+        {worldData && dailyWorldData ? (
+          <WorldDisplay data={worldData} dailyWorldData={dailyWorldData} />
+        ) : (
+          <div></div>
+        )}
 
         <InfoBox />
       </div>

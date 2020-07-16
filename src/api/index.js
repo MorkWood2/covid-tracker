@@ -9,6 +9,11 @@ const dailyUSData =
 
 const worldData = 'https://disease.sh/v3/covid-19/all';
 
+const dailyWorldData =
+  'https://disease.sh/v3/covid-19/historical/all?lastdays=120';
+
+const countryData = 'https://disease.sh/v3/covid-19/countries';
+
 // console.log(stateData);
 
 export const fetchUSData = async () => {
@@ -57,12 +62,40 @@ export const fetchWorldData = async () => {
   }
 };
 
-// export const fetchWorldData = async () => {
+export const fetchDailyWorldData = async () => {
+  try {
+    const response = await axios.get(dailyWorldData);
+    return response;
+  } catch (error) {
+    console.log(error);
+  }
+};
 
-//   try {
-//     axios
-//   } catch (error) {
-//     console.log(error);
-//   }
+export const fetchCountries = async () => {
+  try {
+    const response = await axios.get(countryData);
+    return response.data.map((arr) => arr.country);
+    // return response.map((res) => res.country);
+  } catch (error) {
+    console.log(error);
+  }
+};
 
-// }
+export const fetchData = async (country) => {
+  let changeableUrl = countryData;
+
+  if (country) {
+    changeableUrl = `${countryData}/${country}`;
+  }
+
+  try {
+    //response.data destructure
+
+    const {
+      data: { active, recovered, deaths },
+    } = await axios.get(changeableUrl);
+    return { active, recovered, deaths };
+  } catch (error) {
+    console.log(error);
+  }
+};
