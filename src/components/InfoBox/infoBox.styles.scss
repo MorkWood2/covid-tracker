@@ -47,3 +47,18 @@
     }
   }
 }
+
+@media only screen and (max-width: 800px) {
+  .infobox-container {
+    padding: 0;
+    margin: 0;
+    .info-element {
+      padding: 10px;
+
+      .icon {
+        width: 85px;
+        height: 85px;
+      }
+    }
+  }
+}

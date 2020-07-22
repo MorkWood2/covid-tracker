@@ -90,7 +90,6 @@ const InfoBox = () => {
           <i>Source WHO website</i>
         </a>
       </div>
-      <div height={'300px'}>fdaf</div>
     </div>
   );
 };

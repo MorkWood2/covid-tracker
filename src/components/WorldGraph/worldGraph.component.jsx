@@ -27,7 +27,7 @@ const WorldGraph = ({ data, country }) => {
         datasets: [
           {
             data: dailyCases.map((cases) => cases),
-            label: 'Infected',
+            label: 'Cases',
             borderColor: '#3333ff',
             fill: true,
           },

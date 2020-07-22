@@ -1,7 +1,13 @@
 import React from 'react';
 import './App.css';
 
-import { UsaDisplay, Header, InfoBox, WorldDisplay } from './components';
+import {
+  UsaDisplay,
+  Header,
+  InfoBox,
+  WorldDisplay,
+  Footer,
+} from './components';
 
 import {
   fetchUSData,
@@ -51,6 +57,7 @@ class App extends React.Component {
         {worldData ? <WorldDisplay data={worldData} /> : <div></div>}
 
         <InfoBox />
+        <Footer />
       </div>
     );
   }
