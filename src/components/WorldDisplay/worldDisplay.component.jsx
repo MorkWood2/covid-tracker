@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import { fetchData } from '../../api';
 import WorldGraph from '../WorldGraph/worldGraph.component';
 import CountryPicker from '../CountryPicker/countryPicker.component';
 import CountUp from 'react-countup';
 import './worldDisplay.styles.scss';
 
-const WorldDisplay = ({ data: { data }, dailyWorldData }) => {
+const WorldDisplay = ({ data: { data } }) => {
   // console.log(dailyWorldData);
   const {
     todayCases,
@@ -17,10 +18,32 @@ const WorldDisplay = ({ data: { data }, dailyWorldData }) => {
   } = data;
 
   const [isToggled, setToggled] = useState(true);
+  const [worldData, setWorldData] = useState({});
+  const [country, setCountry] = useState('');
 
   const toggleTrueFalse = () => setToggled(!isToggled);
 
-  if (!active && !dailyWorldData) {
+  useEffect(() => {
+    async function fetchedData() {
+      await fetchData();
+    }
+    fetchedData();
+
+    //populate data from api, set to state
+    // this.setState({ data: fetchedData });
+    setWorldData(fetchedData);
+  }, []); //notice the empty array here
+
+  const handleCountryChange = async (country) => {
+    const fetchedData = await fetchData(country);
+
+    //set data to state
+    // this.setState({ data: fetchedData, country: country });
+    setWorldData(fetchedData);
+    setCountry(country);
+  };
+
+  if (!active) {
     return 'loading';
   }
 
@@ -139,14 +162,8 @@ const WorldDisplay = ({ data: { data }, dailyWorldData }) => {
 
         {isToggled ? (
           <div>
-            {dailyWorldData ? (
-              <div>
-                <CountryPicker />
-                <WorldGraph data={data} dailyWorldData={dailyWorldData} />
-              </div>
-            ) : (
-              <div></div>
-            )}
+            <CountryPicker handleCountryChange={handleCountryChange} />
+            <WorldGraph data={worldData} country={country} />
           </div>
         ) : null}
       </div>

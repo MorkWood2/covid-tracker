@@ -9,12 +9,15 @@ const dailyUSData =
 
 const worldData = 'https://disease.sh/v3/covid-19/all';
 
-const dailyWorldData =
-  'https://disease.sh/v3/covid-19/historical/all?lastdays=120';
+// const dailyWorldData =
+//   'https://disease.sh/v3/covid-19/historical/all?lastdays=120';
+
+//Country/Global graph data
 
 const countryData = 'https://disease.sh/v3/covid-19/countries';
 
-// console.log(stateData);
+const fetchDailyurl =
+  'https://disease.sh/v3/covid-19/historical/all?lastdays=120';
 
 export const fetchUSData = async () => {
   try {
@@ -62,14 +65,14 @@ export const fetchWorldData = async () => {
   }
 };
 
-export const fetchDailyWorldData = async () => {
-  try {
-    const response = await axios.get(dailyWorldData);
-    return response;
-  } catch (error) {
-    console.log(error);
-  }
-};
+// export const fetchDailyWorldData = async () => {
+//   try {
+//     const response = await axios.get(dailyWorldData);
+//     return response;
+//   } catch (error) {
+//     console.log(error);
+//   }
+// };
 
 export const fetchCountries = async () => {
   try {
@@ -90,11 +93,28 @@ export const fetchData = async (country) => {
 
   try {
     //response.data destructure
-
     const {
       data: { active, recovered, deaths },
     } = await axios.get(changeableUrl);
     return { active, recovered, deaths };
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export const fetchDailyData = async () => {
+  try {
+    const { data } = await axios.get(fetchDailyurl);
+
+    const modifiedData = {
+      dailyCases: Object.values(data.cases),
+      dailyDeaths: Object.values(data.deaths),
+      dailyRecovered: Object.values(data.recovered),
+      dailyDate: Object.keys(data.recovered),
+      confirmed: true,
+    };
+
+    return modifiedData;
   } catch (error) {
     console.log(error);
   }

@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { NativeSelect, FormControl } from '@material-ui/core';
 
-import { fetchCountries, fetchData } from '../../api';
+import './countryPicker.styles.scss';
+
+import { fetchCountries } from '../../api';
 
 // const CountryPicker = () => {
 //   return (
@@ -10,24 +12,9 @@ import { fetchCountries, fetchData } from '../../api';
 //     </div>
 //   );
 // };
-const CountryPicker = () => {
+const CountryPicker = ({ handleCountryChange }) => {
   //  state, modified state
   const [fetchedCounties, setFetchedCounties] = useState([]);
-  const [fetchedCountryData, setCountryData] = useState({});
-
-  const handleCountryChange = async (country) => {
-    //set state to countryData
-    setCountryData(await fetchData(country));
-
-    if (country) {
-      console.log(fetchedCountryData);
-    } else {
-      console.log('not working');
-    }
-
-    //set data to state
-    // this.setState({ data: fetchedData, country: country });
-  };
 
   useEffect(() => {
     const fetchAPI = async () => {
@@ -38,15 +25,9 @@ const CountryPicker = () => {
     //second parameter will change only if setFetchedConties is changed
     //allow us to pick different counties
   }, [setFetchedCounties]);
-  //   console.log(fetchData('Afghanistan'));
-  //   console.log(fetchCountries());
-
-  //   const logInput = (input) => {
-  //     console.log(input);
-  //   };
 
   return (
-    <FormControl>
+    <FormControl className={FormControl}>
       <NativeSelect
         defaultValue=''
         onChange={(e) => handleCountryChange(e.target.value)}
