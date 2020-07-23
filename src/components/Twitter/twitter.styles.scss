@@ -1,0 +1,15 @@
+.twitter-container {
+  text-align: center;
+  padding: 100px 0 50px 0;
+
+  .tweet-container {
+    padding-top: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+
+    .twitter-element {
+      box-shadow: 0 5px 20px -2px rgba(50, 145, 200, 0.7);
+    }
+  }
+}

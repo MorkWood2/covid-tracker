@@ -1,4 +1,5 @@
 import React from 'react';
+import Spinner from './components/Spinner/spinner.component.jsx';
 import './App.css';
 
 import {
@@ -7,6 +8,7 @@ import {
   InfoBox,
   WorldDisplay,
   Footer,
+  Twitter,
 } from './components';
 
 import {
@@ -54,9 +56,10 @@ class App extends React.Component {
       <div>
         <Header />
         <UsaDisplay data={usData} dailyData={usDailyData} />
-        {worldData ? <WorldDisplay data={worldData} /> : <div></div>}
+        {worldData ? <WorldDisplay data={worldData} /> : <Spinner />}
 
         <InfoBox />
+        <Twitter />
         <Footer />
       </div>
     );

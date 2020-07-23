@@ -5,7 +5,9 @@ const Footer = () => {
   return (
     <div className='footer-container'>
       <h3>
-        Be apart of the community and Stay Home{' '}
+        Be apart of the community.
+        <br />
+        Stay Home{' '}
         <span role='img' aria-label='house'>
           🏡
         </span>{' '}

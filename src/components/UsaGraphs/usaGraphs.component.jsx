@@ -1,4 +1,5 @@
 import React from 'react';
+import Fade from 'react-reveal/Fade';
 import { HorizontalBar, Line } from 'react-chartjs-2';
 
 import './usaGraphs.styles.scss';
@@ -30,11 +31,11 @@ const UsaGraphs = ({
         fill: false,
         lineTension: 0.1,
         backgroundColor: [
-          'rgba(75,192,192,.4)',
-          'rgba(75, 87, 105, 0.4)',
-          'rgba(68, 129, 187, .4)',
-          'rgba(0,0,0,0.4)',
-          'rgb(247, 188, 78, 0.4)',
+          'rgba(186, 151, 255, 0.7)',
+          'rgba(247, 147, 114, 0.7)',
+          'rgba(81, 241, 251, 0.7)',
+          'rgba(251, 81, 81, 0.7)',
+          'rgba(243, 234, 136, 0.7)',
         ],
         borderColor: 'rgba(75,192,192,1)',
         borderCapStyle: 'butt',
@@ -137,20 +138,22 @@ const UsaGraphs = ({
 
   return (
     <div>
-      <div className='graph-container'>
-        <div className='graph-element'>
-          <HorizontalBar data={barChart} />
+      <Fade>
+        <div className='graph-container'>
+          <div className='graph-element'>
+            <HorizontalBar data={barChart} />
+          </div>
+          <div className='graph-element'>
+            <Line data={lineChart1} />
+          </div>
+          <div className='graph-element'>
+            <Line data={lineChart2} />
+          </div>
+          <div className='graph-element'>
+            <Line data={lineChart3} />
+          </div>
         </div>
-        <div className='graph-element'>
-          <Line data={lineChart1} />
-        </div>
-        <div className='graph-element'>
-          <Line data={lineChart2} />
-        </div>
-        <div className='graph-element'>
-          <Line data={lineChart3} />
-        </div>
-      </div>
+      </Fade>
     </div>
   );
 };

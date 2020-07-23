@@ -1,14 +1,24 @@
 .heading {
   text-align: center;
-  color: #4b5769;
+  // color: #cad6e6;
   font-family: 'Lato', sans-serif;
-  font-weight: 300;
+  font-weight: 500;
   font-size: 50px;
+  letter-spacing: 7px;
+  .red {
+    color: #fb5151;
+  }
+  .white {
+    color: #ffffff;
+  }
+  .blue {
+    color: #51a0fb;
+  }
 }
 
 .content-container {
   padding: 0 10%;
-  color: #4b5769;
+  color: #cad6e6;
   font-family: 'Lato', sans-serif;
   font-weight: 300;
 
@@ -17,7 +27,7 @@
   }
 
   .note {
-    color: #a6a6a6;
+    color: #cad6e6;
     font-size: 13px;
   }
 
@@ -25,11 +35,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 50px 0;
+    padding: 50px 0 100px 0;
 
     button {
       width: 130px;
-      background-color: #4481bb;
+      background: linear-gradient(135deg, #00bec7, #0073e8);
+      box-shadow: 0 5px 20px -2px #0675e4;
       color: whitesmoke;
       border-radius: 8px;
       border: none;
@@ -59,22 +70,27 @@
       margin: 10px 10px 10px 0;
       border-radius: 10px;
       text-align: center;
-      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
-        0 2px 4px -1px rgba(0, 0, 0, 0.06);
-      background-color: #ffffff;
+      box-shadow: 0 4px 6px -2px rgba(255, 255, 255, 0.1);
+      background-color: #1f1454;
 
       .counter {
         font-size: 30px;
         font-weight: 400;
       }
       .red {
-        color: #e64647;
+        color: #fb5151;
       }
       .blue {
-        color: #4481bb;
+        color: #51f1fb;
       }
       .yellow {
-        color: #f7bc4e;
+        color: #f3ea88;
+      }
+      .purple {
+        color: #ba97ff;
+      }
+      .orange {
+        color: #f79372;
       }
     }
   }
