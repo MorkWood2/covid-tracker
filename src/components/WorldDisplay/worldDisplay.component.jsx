@@ -57,19 +57,17 @@ const WorldDisplay = ({ data: { data } }) => {
   return (
     <div>
       <Fade>
-        <h1 className='heading'>
-          <div className='emoji-world'>
-            <span role='img' aria-label='earth'>
-              🌎
-            </span>{' '}
-            <span role='img' aria-label='earth'>
-              🌍
-            </span>{' '}
-            <span role='img' aria-label='earth'>
-              🌏
-            </span>{' '}
-          </div>
-        </h1>
+        <div className='emoji-world'>
+          <span role='img' aria-label='earth'>
+            🌎
+          </span>{' '}
+          <span role='img' aria-label='earth'>
+            🌍
+          </span>{' '}
+          <span role='img' aria-label='earth'>
+            🌏
+          </span>{' '}
+        </div>
       </Fade>
       <div className='content-container'>
         <Fade>

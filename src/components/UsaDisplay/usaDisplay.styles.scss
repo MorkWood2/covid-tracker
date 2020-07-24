@@ -1,18 +1,9 @@
 .heading {
   text-align: center;
-  // color: #cad6e6;
-  font-family: 'Lato', sans-serif;
-  font-weight: 500;
-  font-size: 50px;
-  letter-spacing: 7px;
-  .red {
-    color: #fb5151;
-  }
-  .white {
-    color: #ffffff;
-  }
-  .blue {
-    color: #51a0fb;
+  img {
+    width: 250px;
+    margin: 50px 0 10px 0;
+    box-shadow: 0px 0px 20px 0px rgba(255, 255, 255, 0.2);
   }
 }
 
@@ -86,7 +77,7 @@
         color: #fb5151;
       }
       .blue {
-        color: #51f1fb;
+        color: #3298fd;
       }
       .yellow {
         color: #f3ea88;

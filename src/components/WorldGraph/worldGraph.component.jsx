@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { fetchDailyData } from '../../api';
 import './worldGraph.styles.scss';
-import { Line, HorizontalBar } from 'react-chartjs-2';
+import { Line, HorizontalBar, defaults } from 'react-chartjs-2';
 
 const WorldGraph = ({ data, country }) => {
   const [dailyData, setDailyData] = useState([]);
@@ -20,6 +20,10 @@ const WorldGraph = ({ data, country }) => {
     dailyDate,
     confirmed,
   } = dailyData;
+
+  defaults.global.defaultFontColor = '#CAD6E6';
+  defaults.global.defaultFontFamily = ' Lato, sans-serif';
+
   const lineChart = confirmed ? (
     <Line
       data={{
@@ -28,25 +32,62 @@ const WorldGraph = ({ data, country }) => {
           {
             data: dailyCases.map((cases) => cases),
             label: 'Cases',
-            backgroundColor: 'rgba(247, 147, 114, .5)',
-            borderColor: 'rgba(247, 147, 114, 1)',
-            fill: true,
+            borderColor: '#ba97ff',
+            fill: false,
+            lineTension: 0.1,
+            borderCapStyle: 'butt',
+            borderDash: [],
+            borderDashOffset: 0.0,
+            borderJoinStyle: 'miter',
+            pointBorderWidth: 1,
+            pointHoverRadius: 5,
+            pointHoverBorderWidth: 2,
+            pointRadius: 1,
+            pointHitRadius: 10,
           },
           {
             data: dailyDeaths.map((deaths) => deaths),
             label: 'Deaths',
-            borderColor: 'rgba(251, 81, 81, 1)',
-            backgroundColor: 'rgba(251, 81, 81, 1)',
-            fill: true,
+            borderColor: '#fb5151',
+            fill: false,
+            lineTension: 0.1,
+            borderCapStyle: 'butt',
+            borderDash: [],
+            borderDashOffset: 0.0,
+            borderJoinStyle: 'miter',
+            pointBorderWidth: 1,
+            pointHoverRadius: 5,
+            pointHoverBorderWidth: 2,
+            pointRadius: 1,
+            pointHitRadius: 10,
           },
           {
             data: dailyRecovered.map((recovered) => recovered),
             label: 'Recovered',
-            borderColor: 'rgba(81, 241, 251, 1)',
-            backgroundColor: 'rgba(81, 241, 251, 1)',
-            fill: true,
+            borderColor: '#0675e4',
+            fill: false,
+            lineTension: 0.1,
+            borderCapStyle: 'butt',
+            borderDash: [],
+            borderDashOffset: 0.0,
+            borderJoinStyle: 'miter',
+            pointBorderWidth: 1,
+            pointHoverRadius: 5,
+            pointHoverBorderWidth: 2,
+            pointRadius: 1,
+            pointHitRadius: 10,
           },
         ],
+      }}
+      options={{
+        legend: { display: false },
+        title: {
+          display: true,
+          fontSize: 15,
+          fontColor: 'whitesmoke',
+          fontFamily: "'Lato', sans-serif",
+          text: `Global Statistics - 4 months`,
+        },
       }}
     />
   ) : null;
@@ -54,22 +95,24 @@ const WorldGraph = ({ data, country }) => {
   const barChart = country ? (
     <HorizontalBar
       data={{
-        labels: ['Recovered', 'Active Cases', 'Deaths'],
+        labels: ['Deaths', 'Active Cases', 'Recovered'],
         datasets: [
           {
             label: 'People',
-            backgroundColor: [
-              'rgba(81, 241, 251, 1)',
-              'rgba(247, 147, 114, 1)',
-              'rgba(251, 81, 81, 1)',
-            ],
-            data: [data.recovered, data.active, data.deaths],
+            backgroundColor: ['#fb5151', '#ba97ff', '#0675e4'],
+            data: [data.deaths, data.active, data.recovered],
           },
         ],
       }}
       options={{
         legend: { display: false },
-        title: { display: true, text: `Current state in ${country}` },
+        title: {
+          display: true,
+          fontSize: 15,
+          fontColor: 'whitesmoke',
+          fontFamily: "'Lato', sans-serif",
+          text: `Total Statistics in ${country} - approx.`,
+        },
       }}
     />
   ) : null;

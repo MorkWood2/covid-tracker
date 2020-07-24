@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import flag from '../../assets/usFlag.svg';
 import Fade from 'react-reveal/Fade';
 import './usaDisplay.styles.scss';
 import CountUp from 'react-countup';
@@ -38,9 +39,7 @@ const UsaDisplay = ({ data, dailyData }) => {
   return (
     <div>
       <h1 className='heading'>
-        <span className='red'>U</span>
-        <span className='white'>S</span>
-        <span className='blue'>A</span>
+        <img alt='us flag' src={flag} />
       </h1>
       <Fade>
         <div className='content-container'>

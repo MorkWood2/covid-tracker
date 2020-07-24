@@ -23,18 +23,19 @@ const UsaGraphs = ({
 
   //   console.log(active, deaths, recovered, tests, todayCases, todayDeaths, cases);
   defaults.global.defaultFontColor = '#CAD6E6';
-  defaults.global.defaultFontFamily = ' Lato, sans-serif';
+  defaults.global.defaultFontFamily = "'Lato', sans-serif";
 
   const barChart = {
     labels: ['Cases', 'Recovered', 'Deaths', 'Active Cases'],
+
     datasets: [
       {
         label: 'All Time (US)',
         fill: false,
         lineTension: 0.1,
         backgroundColor: [
-          'rgba(247, 147, 114, 0.7)',
-          'rgba(81, 241, 251, 0.7)',
+          'rgba(186, 151, 255, 0.7)',
+          'rgba(6, 117, 228, 0.7)',
           'rgba(251, 81, 81, 0.7)',
           'rgba(243, 234, 136, 0.7)',
         ],
@@ -65,8 +66,8 @@ const UsaGraphs = ({
         label: 'Confirmed Cases (US)',
         fill: true,
         lineTension: 0.1,
-        backgroundColor: 'rgba(247, 147, 114, .7)',
-        borderColor: 'rgba(247, 147, 114, 0.7)',
+        backgroundColor: 'rgba(186, 151, 255, 0.5)',
+        borderColor: 'rgba(186, 151, 255, 0.7)',
         borderCapStyle: 'butt',
         borderDash: [],
         borderDashOffset: 0.0,
@@ -91,18 +92,18 @@ const UsaGraphs = ({
         label: 'Death Cases (US)',
         fill: true,
         lineTension: 0.1,
-        backgroundColor: 'rgba(251, 81, 81, 0.7)',
+        backgroundColor: 'rgba(0, 0, 0, 0.2)',
         borderColor: 'rgba(251, 81, 81, 0.7)',
         borderCapStyle: 'butt',
         borderDash: [],
         borderDashOffset: 0.0,
         borderJoinStyle: 'miter',
-        pointBorderColor: '#51A0FB',
-        pointBackgroundColor: '#51A0FB',
+        pointBorderColor: 'rgba(251, 81, 81, 0.7)',
+        pointBackgroundColor: 'rgba(251, 81, 81, 0.7)',
         pointBorderWidth: 1,
         pointHoverRadius: 5,
-        pointHoverBackgroundColor: '#51A0FB',
-        pointHoverBorderColor: '#51A0FB',
+        pointHoverBackgroundColor: 'rgba(251, 81, 81, 0.7)',
+        pointHoverBorderColor: 'white',
         pointHoverBorderWidth: 2,
         pointRadius: 1,
         pointHitRadius: 10,
@@ -118,8 +119,8 @@ const UsaGraphs = ({
         label: 'Recoved Cases (US)',
         fill: true,
         lineTension: 0.1,
-        backgroundColor: 'rgba(81, 241, 251, 0.7)',
-        borderColor: 'rgba(81, 241, 251, 0.7)',
+        backgroundColor: 'rgba(6, 117, 228, 0.5)',
+        borderColor: 'rgba(6, 117, 228, 0.7)',
         borderCapStyle: 'butt',
         borderDash: [],
         borderDashOffset: 0.0,
@@ -153,13 +154,13 @@ const UsaGraphs = ({
             <HorizontalBar data={barChart} options={options} />
           </div>
           <div className='graph-element'>
-            <Line data={lineChart1} />
+            <Line data={lineChart1} options={options} />
           </div>
           <div className='graph-element'>
-            <Line data={lineChart2} />
+            <Line data={lineChart2} options={options} />
           </div>
           <div className='graph-element'>
-            <Line data={lineChart3} />
+            <Line data={lineChart3} options={options} />
           </div>
         </div>
       </Fade>
