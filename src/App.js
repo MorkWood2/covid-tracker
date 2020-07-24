@@ -11,19 +11,13 @@ import {
   Twitter,
 } from './components';
 
-import {
-  fetchUSData,
-  fetchUSDataDaily,
-  fetchWorldData,
-  // fetchDailyWorldData,
-} from './api';
+import { fetchUSData, fetchUSDataDaily, fetchWorldData } from './api';
 
 class App extends React.Component {
   state = {
     usData: {},
     usDailyData: {},
     worldData: null,
-    // dailyWorldData: null,
   };
 
   async componentDidMount() {
@@ -33,25 +27,16 @@ class App extends React.Component {
 
     const fetchedWorldData = await fetchWorldData();
 
-    // const fetchedDailyWorldData = await fetchDailyWorldData();
-
-    this.setState(
-      {
-        usData: fetchedUSData,
-        usDailyData: fetchedUSDataDaily,
-        worldData: fetchedWorldData,
-        // dailyWorldData: fetchedDailyWorldData,
-      }
-      // () => {
-      //   console.log(fetchedWorldData);
-      // }
-    );
-    // console.log(fetchedDailyWorldData);
+    this.setState({
+      usData: fetchedUSData,
+      usDailyData: fetchedUSDataDaily,
+      worldData: fetchedWorldData,
+    });
   }
 
   render() {
     const { usData, usDailyData, worldData } = this.state;
-    // console.log(dailyWorldData);
+
     return (
       <div>
         <Header />
