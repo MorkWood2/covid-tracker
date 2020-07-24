@@ -15,11 +15,11 @@ const Footer = () => {
       <h5>
         Icons made by{' '}
         <a href='https://www.flaticon.com/authors/freepik' title='Freepik'>
-          Freepik
+          Freepik .
         </a>{' '}
         Created by{' '}
         <a href='https://markwild.dev/' title='Mark'>
-          Mark Wild
+          Mark Wild .
         </a>{' '}
         API by{' '}
         <a href='https://disease.sh/' title='Mark'>

@@ -73,7 +73,9 @@ const WorldDisplay = ({ data: { data } }) => {
       </Fade>
       <div className='content-container'>
         <Fade>
-          <h1 className='box-title'>Today</h1>
+          <h1 className='box-title'>
+            Today <sub>Global</sub>
+          </h1>
           <h6>{currentDate()}</h6>
           <div className='box-container'>
             <div className='box'>
@@ -109,7 +111,9 @@ const WorldDisplay = ({ data: { data } }) => {
       </div>
       <div className='content-container'>
         <Fade>
-          <h1 className='box-title'>All Time</h1>
+          <h1 className='box-title'>
+            All Time <sub>Global</sub>
+          </h1>
           <div className='box-container'>
             <div className='box'>
               <h5>TESTS CONDUCTED</h5>

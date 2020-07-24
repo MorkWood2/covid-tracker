@@ -1,6 +1,15 @@
 .twitter-container {
   text-align: center;
   padding: 100px 0 50px 0;
+  font-family: 'Lato', sans-serif;
+  letter-spacing: 1.5px;
+
+  p {
+    color: #cad6e6;
+    font-size: 30px;
+    letter-spacing: 3px;
+    font-weight: 300;
+  }
 
   .tweet-container {
     padding-top: 50px;
@@ -9,7 +18,8 @@
     justify-content: space-evenly;
 
     .twitter-element {
-      box-shadow: 0 5px 20px -2px rgba(50, 145, 200, 0.7);
+      box-shadow: 0 0px 20px -2px rgba(255 205 238 / 70%);
+      border-radius: 7px;
     }
   }
 }

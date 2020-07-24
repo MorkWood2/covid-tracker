@@ -7,19 +7,21 @@ const Twitter = () => {
   return (
     <Fade>
       <div className='twitter-container'>
-        <h2>Stay Informed</h2>
+        <p>Stay Informed</p>
         <div className='tweet-container'>
           <div className='twitter-element'>
             <TwitterTimelineEmbed
               sourceType='profile'
-              screenName='CDCgov'
+              screenName='COVID19Tracking'
+              theme='dark'
               options={{ height: 500, width: 300 }}
             />
           </div>
           <div className='twitter-element'>
             <TwitterTimelineEmbed
               sourceType='profile'
-              screenName='COVID19Tracking'
+              screenName='CDCgov'
+              theme='dark'
               options={{ height: 500, width: 300 }}
             />
           </div>
@@ -27,6 +29,7 @@ const Twitter = () => {
             <TwitterTimelineEmbed
               sourceType='profile'
               screenName='WHO'
+              theme='dark'
               options={{ height: 500, width: 300 }}
             />
           </div>

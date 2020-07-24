@@ -1,9 +1,27 @@
 .footer-container {
   text-align: center;
-  font-family: 'Lato', sans-serif;
-  color: #4b5769;
+
+  h3,
+  h5 {
+    font-family: 'Lato', sans-serif;
+    letter-spacing: 1px;
+    font-weight: 300;
+    color: #cad6e6;
+  }
+
+  h5 {
+    a {
+      text-decoration: none;
+      color: #9de1f9;
+      transition: 0.5s;
+    }
+    a:hover {
+      color: #58d3ff;
+      transition: 0.5s;
+    }
+  }
 
   span {
-    font-size: 40px;
+    font-size: 30px;
   }
 }
