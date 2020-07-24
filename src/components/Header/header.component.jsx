@@ -3,7 +3,7 @@ import './header.styles.scss';
 const Header = () => {
   return (
     <div className='header-container'>
-      <p>COVID-19 Tracker</p>
+      <p>COVID-19</p>
     </div>
   );
 };

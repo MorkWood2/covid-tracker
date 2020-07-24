@@ -55,7 +55,12 @@ class App extends React.Component {
     return (
       <div>
         <Header />
-        <UsaDisplay data={usData} dailyData={usDailyData} />
+
+        {usData ? (
+          <UsaDisplay data={usData} dailyData={usDailyData} />
+        ) : (
+          <Spinner />
+        )}
         {worldData ? <WorldDisplay data={worldData} /> : <Spinner />}
 
         <InfoBox />
