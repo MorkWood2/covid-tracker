@@ -5,7 +5,15 @@ import './spinner.styles.scss';
 const Spinner = () => {
   return (
     <Fragment>
-      <img src={spinner} alt='Loading...' className='spinner' />
+      <div className='spinner-container'>
+        <h4 className='spinner-text'>
+          Make sure your AdBlocker isn't blocking the API{' '}
+          <span role='img' aria-label='face'>
+            😜
+          </span>
+        </h4>
+        <img src={spinner} alt='Loading...' className='spinner' />
+      </div>
     </Fragment>
   );
 };
