@@ -21,8 +21,8 @@ const InfoBox = () => {
             <div className='text-container'>
               <h3>Wash your hands frequently</h3>
               <p>
-                Regularly and thoroughly clean your hands with an alcohol-based
-                hand rub or wash them with soap and water.
+                Clean your hands often, either with soap and water for 20
+                seconds or a hand sanitizer that contains at least 60% alcohol.
               </p>
             </div>
           </Fade>
@@ -33,8 +33,8 @@ const InfoBox = () => {
             <div className='text-container'>
               <h3>Maintain social distancing</h3>
               <p>
-                Maintain at least 3 feet distance between yourself and anyone to
-                ensure you don't spread the virus.
+                Put distance between yourself and other people (at least 6
+                feet).
               </p>
             </div>
           </Fade>
@@ -45,10 +45,8 @@ const InfoBox = () => {
             <div className='text-container'>
               <h3>Avoid touching eyes, nose and mouth</h3>
               <p>
-                Hands touch many surfaces and can pick up viruses. Once
-                contaminated, hands can transfer the virus to your eyes, nose or
-                mouth. From there, the virus can enter your body and can make
-                you sick.
+                To help prevent infections, keep your hands away from your eyes,
+                nose, and mouth.
               </p>
             </div>
           </Fade>
@@ -59,9 +57,10 @@ const InfoBox = () => {
             <div className='text-container'>
               <h3>Wear a mask</h3>
               <p>
-                The greatest benefit of masking the masses comes not from
-                shielding the mouths of the healthy but from covering the mouths
-                of people already infected.
+                CDC recommends that people wear cloth face coverings in public
+                settings and when around people outside of their household,
+                especially when other social distancing measures are difficult
+                to maintain.
               </p>
             </div>
           </Fade>
@@ -70,14 +69,11 @@ const InfoBox = () => {
           <Fade>
             <img src={Icon5} alt='icon' className='icon' />
             <div className='text-container'>
-              <h3>
-                If you have fever, cough and difficulty breathing, seek medical
-                care early or quarentine for 14 days.
-              </h3>
+              <h3>Quarantine If You Might Be Sick</h3>
               <p>
-                Stay home if you feel unwell. If you have a fever, cough and
-                difficulty breathing, seek medical attention and call in
-                advance. Follow the directions of your local health authority.
+                Stay home for 14 days after your last contact with a person who
+                has COVID-19. Quarantine is used to keep someone who{' '}
+                <i> might have been exposed to COVID-19 </i> away from others.
               </p>
             </div>
           </Fade>
