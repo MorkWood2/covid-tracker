@@ -2,7 +2,7 @@
 > Data visualization
 
 
-COVID19 web dashboard built in React that provides real time data, fetched from an open-source API. Utilizes chart.js to spread data to visualize metrics.
+COVID19 web dashboard built in React provides real time data, fetched from [disease.sh](https://disease.sh/) API. Utilizes chart.js to spread data to visualize metrics.
 
 ![](header.png)
 
