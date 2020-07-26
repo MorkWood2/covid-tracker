@@ -1,11 +1,8 @@
-# Product Name
-> Short blurb about what your product does.
+# COVID-19 Tracker
+> Data visualization
 
-[![NPM Version][npm-image]][npm-url]
-[![Build Status][travis-image]][travis-url]
-[![Downloads Stats][npm-downloads]][npm-url]
 
-One to two paragraph statement about your product and what it does.
+COVID19 web dashboard built in React that provides real time data, fetched from an open-source API. Utilizes chart.js to spread data to visualize metrics.
 
 ![](header.png)
 
